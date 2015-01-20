@@ -1,4 +1,4 @@
-.PHONY: all test clean vim
+.PHONY: all test clean vim git
 
 vim:
 	cp vim/.vimrc ~/.vimrc
@@ -8,3 +8,8 @@ vim:
 	cp -r vim/colors   ~/.vim/
 	cp -r vim/doc      ~/.vim/
 	cp -r vim/syntax   ~/.vim/
+
+git:
+	cp git/.gitconfig ~/.gitconfig
+
+
