@@ -1,4 +1,6 @@
-.PHONY: all test clean vim git
+.PHONY: all test clean vim git zsh
+
+all: vim git zsh
 
 vim:
 	cp vim/.vimrc ~/.vimrc
@@ -11,5 +13,9 @@ vim:
 
 git:
 	cp git/.gitconfig ~/.gitconfig
+
+
+zsh:
+	cp zsh/.zshrc ~/.zshrc
 
 
