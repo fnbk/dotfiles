@@ -9,6 +9,7 @@ vim:
 	cp -r vim/bundle   ~/.vim/
 	cp -r vim/colors   ~/.vim/
 	cp -r vim/doc      ~/.vim/
+	cp -r vim/ftplugin ~/.vim/
 	cp -r vim/syntax   ~/.vim/
 
 git:
