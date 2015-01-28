@@ -146,6 +146,6 @@ filetype indent on
 " highlight tabs
 "
 
-set list lcs=tab:▸\
+set list lcs=tab:▸\ 
 highlight SpecialKey guifg=grey guibg=bg
 
