@@ -1,5 +1,5 @@
 #
-# PATH
+# $PATH
 #
 
 export PATH=''
@@ -20,6 +20,12 @@ export PATH=/usr/local/Cellar/:$PATH
 
 # chef
 export PATH=/opt/chef/embedded/bin:$PATH
+
+#
+# $GOPATH
+#
+
+export GOPATH=$HOME/go
 
 #
 # compiler flags

@@ -1,0 +1,26 @@
+
+#
+# vim directory structure: http://learnvimscriptthehardway.stevelosh.com/chapters/42.html
+#
+
+# autoload:
+autoload plugins located in this directory
+
+# bundle:
+pathogen default plugin folder: manipulates vim runtime path, so that plugins can have their own vim directory structure
+
+# colors:
+color themes
+
+# doc:
+documentation
+
+# ftdetect
+detect and set filetypes
+
+# ftplugin
+settings based on filetypes
+
+# syntax
+syntax files for custom syntax highlighting
+
