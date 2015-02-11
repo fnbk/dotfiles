@@ -161,6 +161,9 @@ setopt auto_cd
 # aliases
 #
 
+# password generator
+alias password='pwgen --algorithm=memorable --count=1 --length=12'
+
 # vi
 alias vi='mvim'
 
