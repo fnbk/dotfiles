@@ -16,10 +16,14 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 
 # homebrew
-export PATH=/usr/local/Cellar/:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+
+# macports
+export PATH=/opt/macports/bin:$PATH
 
 # chef
 export PATH=/opt/chef/embedded/bin:$PATH
+
 
 #
 # $GOPATH
