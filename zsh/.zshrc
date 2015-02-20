@@ -15,6 +15,9 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # go
 export PATH=/usr/local/go/bin:$PATH
 
+# kafka
+export PATH=/usr/local/kafka/bin:$PATH
+
 # homebrew
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -23,7 +26,6 @@ export PATH=/opt/macports/bin:$PATH
 
 # chef
 export PATH=/opt/chef/embedded/bin:$PATH
-
 
 #
 # $GOPATH
