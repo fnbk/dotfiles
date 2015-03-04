@@ -14,6 +14,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 # go
 export PATH=/usr/local/go/bin:$PATH
+# export PATH=/usr/local/go1.5/bin:$PATH
 
 # kafka
 export PATH=/usr/local/kafka/bin:$PATH
@@ -32,6 +33,7 @@ export PATH=/opt/chef/embedded/bin:$PATH
 #
 
 export GOPATH=$HOME/go
+# export GOPATH=$HOME/go1.5
 
 #
 # compiler flags
@@ -187,3 +189,8 @@ alias gd="git difftool -y -t Kaleidoscope"
 
 # uuid: 8a7fbe10-99c0-444b-b9b6-9ee723ecff0d
 alias uuid='uuidgen | tr 'A-Z' 'a-z''
+
+# get lines in a file: lines <file>
+lines() {
+    cat $1 | wc -l
+}
