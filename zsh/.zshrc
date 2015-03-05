@@ -194,3 +194,8 @@ alias uuid='uuidgen | tr 'A-Z' 'a-z''
 lines() {
     cat $1 | wc -l
 }
+
+# serve current directory
+serve() {
+    python -m SimpleHTTPServer 5000
+}
