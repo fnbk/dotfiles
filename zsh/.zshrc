@@ -5,6 +5,15 @@
 
 ZLE_REMOVE_SUFFIX_CHARS=""
 
+
+#
+# generate a core dump
+#
+
+ulimit -c unlimited
+# ulimit -c 0 # no core dump
+
+
 #
 # $PATH
 #
