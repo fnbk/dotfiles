@@ -1,20 +1,36 @@
+"
+" helper functions
+"
+
+function! CreateDirectoryIfNotExists (dir)
+    if !isdirectory(a:dir)
+        call mkdir(a:dir, "p")
+    endif
+endfunction
+
 
 "
 " backup file: *.ext~ 
 " source: http://stackoverflow.com/a/607475
 "
 
+let backupDirectory = "/tmp/ext"
+call CreateDirectoryIfNotExists(backupDirectory)
+
 "set nobackup
 "set nowritebackup
-set backupdir=/tmp
+let &backupdir = backupDirectory
 
 
 "
 " swap file: *.ext.swp
 "
 
+let swapDirectory = "/tmp/swp"
+call CreateDirectoryIfNotExists(swapDirectory)
+
 set swapfile
-set directory=/tmp
+let &directory = swapDirectory
 
 
 "
