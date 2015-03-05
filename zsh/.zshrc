@@ -1,4 +1,11 @@
 #
+# stop zsh from eating space before pipe symbol
+# http://goo.gl/4ZxRcH
+#
+
+ZLE_REMOVE_SUFFIX_CHARS=""
+
+#
 # $PATH
 #
 
