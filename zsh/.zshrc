@@ -113,6 +113,24 @@ docker-remove-containers() {
   docker rm $(docker ps -a -q)
 }
 
+
+#
+# kafka
+#
+
+start-zookeeper() {
+	cd /tmp # go to /tmp because will create logs in current directory
+	KAFKA_ROOT=/usr/local/kafka
+	${KAFKA_ROOT}/bin/zookeeper-server-start.sh ${KAFKA_ROOT}/config/zookeeper.properties
+}
+
+start-kafka() {
+	cd /tmp
+	KAFKA_ROOT=/usr/local/kafka
+	${KAFKA_ROOT}/bin/kafka-server-start.sh ${KAFKA_ROOT}/config/server.properties
+}
+
+
 #
 # default editor
 #
