@@ -13,6 +13,12 @@ ZLE_REMOVE_SUFFIX_CHARS=""
 ulimit -c unlimited
 # ulimit -c 0 # no core dump
 
+#
+# $GOPATH
+#
+
+export GOPATH=$HOME/go
+
 
 #
 # $PATH
@@ -30,7 +36,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 # go
 export PATH=/usr/local/go/bin:$PATH
-# export PATH=/usr/local/go1.5/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # kafka
 export PATH=/usr/local/kafka/bin:$PATH
@@ -44,12 +50,6 @@ export PATH=/opt/macports/bin:$PATH
 # chef
 export PATH=/opt/chef/embedded/bin:$PATH
 
-#
-# $GOPATH
-#
-
-export GOPATH=$HOME/go
-# export GOPATH=$HOME/go1.5
 
 #
 # compiler flags
