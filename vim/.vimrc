@@ -66,10 +66,10 @@ noremap <C-w>\| :vsplit<cr>
 " resize current buffer by +/- 5 increments
 "
 
-nnoremap <C-h> :vertical resize -5<cr>
-nnoremap <C-l> :vertical resize +5<cr>
-nnoremap <C-j> :resize +5<cr>
-nnoremap <C-k> :resize -5<cr>
+" nnoremap <C-h> :vertical resize -5<cr>
+" nnoremap <C-l> :vertical resize +5<cr>
+" nnoremap <C-j> :resize +5<cr>
+" nnoremap <C-k> :resize -5<cr>
 
 "
 " leader
@@ -102,10 +102,10 @@ set nocompatible  " use Vim settings, rather then Vi settings
 " get off my lawn
 "
 
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" nnoremap <Left> :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up> :echoe "Use k"<CR>
+" nnoremap <Down> :echoe "Use j"<CR>
 
 
 "
