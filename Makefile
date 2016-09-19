@@ -1,6 +1,10 @@
-.PHONY: all test clean vim git zsh
+.PHONY: all test clean vim git zsh bash
 
-all: vim git zsh
+all: bash
+
+bash:
+	cp bash/_bashrc ~/.bashrc
+	source ~/.bashrc
 
 vim:
 	rm -rf ~/.vim
