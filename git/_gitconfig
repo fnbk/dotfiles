@@ -1,0 +1,9 @@
+[user]
+  name = Florian Boehmak
+  email = florian@fnbk.cc
+[color]
+  ui = 1
+[help]
+  autocorrect = 1
+[push]
+  default = simple

@@ -6,6 +6,11 @@ bash:
 	cp bash/_bashrc ~/.bashrc
 	source ~/.bashrc
 
+git:
+	cp git/_gitconfig ~/.gitconfig
+
+
+
 vim:
 	rm -rf ~/.vim
 	rm -f ~/.vimrc
@@ -18,10 +23,6 @@ vim:
 	cp -r vim/ftdetect ~/.vim/
 	cp -r vim/ftplugin ~/.vim/
 	cp -r vim/syntax   ~/.vim/
-
-git:
-	cp git/.gitconfig ~/.gitconfig
-
 
 zsh:
 	cp zsh/.zshrc ~/.zshrc
