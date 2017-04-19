@@ -20,3 +20,6 @@ log4 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C
 # http://stackoverflow.com/a/35075021
 # https://git-scm.com/docs/pretty-formats
 # http://stackoverflow.com/a/34467298
+
+[core]
+	editor = /usr/local/bin/vim # fixes "error: There was a problem with the editor 'vi'.", # http://bit.ly/2oKzMVY
