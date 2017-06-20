@@ -1,0 +1,221 @@
+call plug#begin()
+Plug 'fatih/vim-go'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'fatih/molokai'
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'Shougo/neocomplete'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'suan/vim-instant-markdown'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
+set autowrite
+set nu
+
+
+"
+" leader
+"
+
+" :let mapleader = "#"
+" source: http://learnvimscriptthehardway.stevelosh.com/chapters/06.html
+
+"
+" tabs and spaces
+"
+" source:
+" http://stackoverflow.com/questions/1562633/setting-vim-whitespace-preferences-by-filetype
+
+" :retab!
+"
+" show tabs or spaces
+" :set list
+" :set nolist
+
+"
+filetype plugin on
+
+" by default, the indent is 2 spaces. 
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+"
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType json setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType javascript.jsx setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
+
+"
+" jsbeautify
+"
+
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType javascript.jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
+
+"
+"
+"
+
+" map <C-n> :cnext<CR>
+" map <C-m> :cprevious<CR>
+" nnoremap <leader>a :cclose<CR>
+
+"
+"
+"
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+" :GoAlternate  commands :A, :AV, :AS and :AT
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+"
+" run :GoBuild or :GoTestCompile based on the go file
+"
+
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#cmd#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+"
+"
+"
+
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+
+
+"
+" execute goimports on file save
+"
+
+let g:go_fmt_command = "goimports"
+
+
+"
+" highlighting
+"
+	    
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+"
+" colorscheme
+"
+
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
+
+"
+" metalinter 
+"
+
+" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['errcheck']
+
+"
+" NERDTree
+"
+" source: https://github.com/scrooloose/nerdtree
+
+map <C-n> :NERDTreeToggle<CR>
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+
+"
+" auto highlight variable under cursor
+"
+
+let g:go_auto_sameids = 1
+
+"
+"
+"
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+	return neocomplete#close_popup() . "\<CR>"
+endfunction
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+ 
+
+" disable scratch preview window
+set completeopt-=preview
+
+
+"
+" editorconfig
+"
+
+" http://editorconfig.org/
+" .editorconfig includes coding styles, like charset=utf-8, indent_style=space,
+" indent_size=4 to garantee consistent styles in the project
+"
+"
+
+"
+" split navigation
+"
+
+" https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
