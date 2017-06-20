@@ -24,3 +24,8 @@ alias gd="git diff"
 alias gt='go test $(go list ./... | grep -v vendor)'
 
 
+#
+# custom project settings
+#
+
+source ~/.primary_bashrc

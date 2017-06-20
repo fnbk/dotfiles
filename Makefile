@@ -4,6 +4,7 @@ all: bash
 
 bash:
 	cp bash/_bashrc ~/.bashrc
+	cp bash/_primary_bashrc ~/.primary_bashrc
 	source ~/.bashrc
 
 git:
