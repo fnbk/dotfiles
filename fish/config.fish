@@ -1,6 +1,13 @@
+#
+# PATH variable
+#
 
+# prepend to PATH variable: set PATH /usr/local/bin $PATH
+# prepend to PATH using fish universal variable: set -U fish_user_paths /usr/local/bin $fish_user_paths
+# source: http://bit.ly/2z3rzlQ
 
-# set -g -x PATH /usr/local/bin $PATH
+set -g fish_user_paths "/usr/local/opt/go@1.8/bin" $fish_user_paths
+
 
 #
 # go
