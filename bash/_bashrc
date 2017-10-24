@@ -3,14 +3,9 @@
 # go
 #
 
+export GOROOT=/usr/local/go
 export PATH=$PATH:/usr/local/go/bin:~/primary/go/bin
 export GOPATH=~/primary/go
-
-#
-# PRIMARY
-#
-
-alias primary="cd ~/primary/go/src/bitbucket.scm.otto.de/scm/primary"
 
 #
 # handy alisases
@@ -23,9 +18,26 @@ alias gd="git diff"
 # go
 alias gt='go test $(go list ./... | grep -v vendor)'
 
+#
+# zookeeper & kafka
+#
+
+alias start_zookeeper='zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties'
+alias stop_zookeeper='zookeeper-server-stop'
+
+alias start_kafka='kafka-server-start /usr/local/etc/kafka/server.properties'
+alias stop_kafka='kafka-server-stop'
+
+#
+# ActiveMQ
+#
+
+alias start_activemq='activemq start'
+alias stop_activemq='activemq stop'
 
 #
 # custom project settings
 #
 
 source ~/.primary_bashrc
+
