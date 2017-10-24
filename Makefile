@@ -19,3 +19,6 @@ zsh:
 nvim:
 	cp nvim/init.vim ~/.config/nvim/init.vim
 
+fish:
+	mv ~/.config/fish ~/.config/fish.$(shell date +%s)
+	cp -rf ~/dotfiles/fish ~/.config/fish
