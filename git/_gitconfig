@@ -23,6 +23,3 @@ log4 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C
 
 [core]
 	editor = /usr/local/bin/vim # fixes "error: There was a problem with the editor 'vi'.", # http://bit.ly/2oKzMVY
-
-[merge]
-	ff = false # always add a new commit when merging; gitflow: 'git merge --no-ff', source: http://bit.ly/1MjVAf6
