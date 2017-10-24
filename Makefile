@@ -1,4 +1,4 @@
-.PHONY: all test clean vim git zsh bash
+.PHONY: all test clean vim git zsh bash nvim fish
 
 all: bash
 
@@ -10,12 +10,12 @@ bash:
 git:
 	cp git/_gitconfig ~/.gitconfig
 
-
-
 vim:
 	cp vim/_vimrc ~/.vimrc
 
 zsh:
 	cp zsh/.zshrc ~/.zshrc
 
+nvim:
+	cp nvim/init.vim ~/.config/nvim/init.vim
 
