@@ -1,24 +1,16 @@
-.PHONY: all test clean vim git zsh bash nvim fish
+.PHONY: all test clean git nvim fish
 
-all: bash
-
-bash:
-	cp bash/_bashrc ~/.bashrc
-	cp bash/_primary_bashrc ~/.primary_bashrc
-	source ~/.bashrc
+all: git nvim fish
 
 git:
-	cp git/_gitconfig ~/.gitconfig
-
-vim:
-	cp vim/_vimrc ~/.vimrc
-
-zsh:
-	cp zsh/.zshrc ~/.zshrc
+	mkdir -p ~/.config/backup && mv ~/.config/git ~/.config/backup/git.$(shell date +%Y-%m-%d-%H%M%S)
+	cp -rf git ~/.config/git
 
 nvim:
-	cp nvim/init.vim ~/.config/nvim/init.vim
+	mkdir -p ~/.config/backup && mv ~/.config/nvim ~/.config/backup/nvim.$(shell date +%Y-%m-%d-%H%M%S)
+	cp -rf nvim ~/.config/nvim
 
 fish:
-	mv ~/.config/fish ~/.config/fish.$(shell date +%s)
-	cp -rf ~/dotfiles/fish ~/.config/fish
+	mkdir -p ~/.config/backup && mv ~/.config/fish ~/.config/backup/fish.$(shell date +%Y-%m-%d-%H%M%S)
+	cp -rf fish ~/.config/fish
+

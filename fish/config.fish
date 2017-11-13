@@ -13,7 +13,7 @@ set -g fish_user_paths "/usr/local/opt/go@1.8/bin" $fish_user_paths
 # go
 #
 
-set -g -x GOROOT /usr/local/Cellar/go/1.9.1/libexec
+set -g -x GOROOT /usr/local/Cellar/go@1.8/1.8.4/libexec/
 set -g -x GOPATH ~/primary/go
 set -g -x PATH $PATH $GOROOT/bin # go root binaries
 set -g -x PATH $PATH ~/primary/go/bin # go path binaries

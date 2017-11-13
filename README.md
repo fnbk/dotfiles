@@ -7,8 +7,8 @@ make
 
 ## build individually
 ```
-make vim
-make zsh
+make nvim
+make fish
 make git
 ```
 

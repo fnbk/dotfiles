@@ -1,0 +1,11 @@
+# Vim
+*.swp
+
+# OSX's Desktop Services Store
+.DS_Store
+
+# Visual Studio Code
+.vscode
+
+# IDEA Plattform - IntelliJ, Goland
+.idea
