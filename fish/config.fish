@@ -10,6 +10,12 @@ set -g fish_user_paths "/usr/local/opt/go@1.8/bin" $fish_user_paths
 
 
 #
+# yarn
+#
+
+set -g -x PATH $PATH (yarn global bin)
+
+#
 # go
 #
 
