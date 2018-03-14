@@ -16,17 +16,14 @@ make git
 
 ## vcprompt
 ```
-git clone git@github.com:fnbk/vcpromt.git
-./autogen.sh
-./configure
+git clone git@bitbucket.org:fnbk/vcpromt.git
 make
 sudo make install
 ```
 
 ## pwgen
 ```
-git clone git@github.com:fnbk/pwgen.git
-cd pwgen
+git clone git@bitbucket.org:fnbk/pwgen.git
 make
 sudo make install
 ```
