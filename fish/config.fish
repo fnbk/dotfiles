@@ -36,6 +36,10 @@ alias gd="git diff"
 # go
 alias gt='go test (go list ./... | grep -v vendor)'
 
+# python
+alias p2='/usr/local/bin/python2'
+alias p3='/usr/local/bin/python3'
+
 #
 # zookeeper & kafka
 #

@@ -13,4 +13,6 @@ nvim:
 fish:
 	mkdir -p ~/.config/backup && mv ~/.config/fish ~/.config/backup/fish.$(shell date +%Y-%m-%d-%H%M%S)
 	cp -rf fish ~/.config/fish
+	@echo For the changes to take effect please execute:
+	@echo source ~/.config/fish/config.fish
 
