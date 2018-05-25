@@ -1,15 +1,4 @@
 #
-# PATH variable
-#
-
-# prepend to PATH variable: set PATH /usr/local/bin $PATH
-# prepend to PATH using fish universal variable: set -U fish_user_paths /usr/local/bin $fish_user_paths
-# source: http://bit.ly/2z3rzlQ
-
-set -g fish_user_paths "/usr/local/opt/go@1.8/bin" $fish_user_paths
-
-
-#
 # yarn
 #
 
@@ -19,7 +8,7 @@ set -g -x PATH $PATH (yarn global bin)
 # go
 #
 
-set -g -x GOROOT /usr/local/Cellar/go@1.8/1.8.4/libexec/
+set -g -x GOROOT /usr/local/Cellar/go@1.9/1.9.6/libexec/
 set -g -x GOPATH ~/primary/go
 set -g -x PATH $PATH $GOROOT/bin # go root binaries
 set -g -x PATH $PATH ~/primary/go/bin # go path binaries
