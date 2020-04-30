@@ -43,3 +43,9 @@ sudo make install
 ```
 sudo git clone https://github.com/Homebrew/homebrew.git /opt/homebrew
 ```
+
+
+# Windows Setup
+
+**Notepad++**
+https://github.com/pnedev/compare-plugin
